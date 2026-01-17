@@ -1,0 +1,171 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Comentarios</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #20aae6, #42afd3, #22a4db);
+    color: #e0e0e0;
+    text-align: center;
+}
+
+/* HEADER */
+h2 {
+    font-size: 38px;
+    background: #0a8f84;
+    color: black;
+    padding: 20px;
+    margin: 0;
+}
+
+/* CONTENEDOR GENERAL */
+.contenedor {
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+/* MENU */
+.menu {
+    margin-bottom: 25px;
+}
+
+.menu a {
+    color: #00e6d8;
+    margin: 0 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* FORMULARIO */
+.form-card {
+    background: rgba(255,255,255,0.12);
+    padding: 25px;
+    border-radius: 15px;
+    width: 400px;
+    margin: 0 auto 40px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    border: none;
+    padding: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    background: #00e6d8;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00bfa5;
+}
+
+/* TABLA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr {
+    background: rgba(255,255,255,0.12);
+}
+
+td {
+    padding: 10px;
+}
+
+/* BOTON ELIMINAR */
+table button {
+    background: #ff4444;
+    color: white;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+}
+
+/* VOLVER */
+.boton-volver {
+    display: inline-block;
+    margin: 30px 0;
+    padding: 12px 25px;
+    background: #1082ce;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+/* Ocultar la columna del ID */
+td:first-child {
+    display: none;
+}
+
+/* Ocultar botón eliminar */
+td:last-child {
+    display: none;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<h2>Publicar Comentario</h2>
+
+<div class="contenedor">
+
+    <div class="menu">
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('registro') }}"> Nuevo registro</a>
+        <a href="{{ url_for('logout') }}"> Cerrar sesión</a>
+    </div>
+
+    <div class="form-card">
+        <form method="POST">
+            <textarea name="texto" placeholder="Escribe tu comentario aquí..." required></textarea>
+            <br>
+            <button type="submit">Enviar comentario</button>
+        </form>
+    </div>
+
+    <table>
+    {% for c in comentarios %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.mensaje }}</td>
+            <td>
+                <form action="/eliminar" method="POST">
+                    <input type="hidden" name="id" value="{{ c.id }}">
+                    <button>X</button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+
+    <a class="boton-volver" href="{{ url_for('index') }}">Volver al inicio</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"HUELLA PET" - Página Principal</title>
+ <script defer src="https://app.embed.im/snow.js"></script>
+
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #65b623, #203a43, #65b623);
+    color: #e0e0e0;
+    text-align: center;
+}
+
+/* ====== HEADER ====== */
+header {
+    background: rgba(0,0,0,0.6);
+    padding: 30px 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+header h1{
+    font-size: 2.3rem;
+    letter-spacing: 2px;
+}
+
+/* ====== NAV ====== */
+nav {
+    background: rgba(38, 173, 45, 0.15);
+    padding: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 25px rgba(57, 107, 245, 0.3);
+}
+
+nav a {
+    margin: 0 15px;
+    color: #9affb1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ff9c;
+}
+
+/* ====== CONTENIDO ====== */
+.contenido {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.contenido h2{
+    color: #7CFF9E;
+    margin-bottom: 15px;
+}
+
+.contenido p{
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* ====== TARJETAS ====== */
+.card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+/* ====== FOOTER ====== */
+footer {
+    background: rgba(0,0,0,0.7);
+    color: #9affb1;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
+}
+img{
+    border-radius: 70px;
+}
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <h1>HUELLA PET</h1>
+        <p>Reciclaje, importancia y beneficios</p>
+    </header>
+
+    <nav>
+        <h3>MENU</h3>
+        <a href="/beneficios">Beneficios</a>
+        <a href="/como_reciclar">Cómo Reciclar</a>
+        <a href="/concepto_del_pet">Concepto del PET</a>
+        <a href="/encuesta">Encuesta</a>
+        <a href="/importancia">Importancia</a>
+        <a href="/objetivos">Objetivos</a>
+        <a href="/comentario">Comentario</a>
+    </nav>
+
+<body>
+<!-- Contenido principal-->
+     <main>
+        <h2>  Bienvenidos a nuestra pagina web</h2>
+        <p>"Cada botella que reciclamos, es un recordatorio, que las pequeñas acciones, generan 
+            grandes cambios"</p>
+
+
+        <header>
+            <h1>HUELLA PET</h1>
+            <img src="data:image/jpeg;base64,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">
+        </header>
+
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Encuesta PET</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #63ff85, #5ecaee, #2c5364);
+    color: #e0e0e0;
+    text-align: center;
+    margin: 0%;
+    padding: 0%;}
+        h1 {
+            font-size: 50px;
+             background: linear-gradient(135deg, #0f2027, #6bc1dd, #2c5364);
+    color: #131212;
+    text-align: center;
+        }
+        form {
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+             background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .pregunta {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .pregunta strong {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            font-size: 15px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        button {
+            background-color: rgb(5, 132, 182);
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: rgb(100, 180, 30);
+        }
+    </style>
+</head>
+<body>
+    <h1>Encuesta sobre reciclaje PET</h1>
+
+    <form method="POST" action="/encuesta">
+        {% for pregunta in preguntas %}
+    {% set i = loop.index0 %}
+    <div class="pregunta">
+        <strong>{{ pregunta.pregunta }}</strong>
+
+        {% for opcion in pregunta.respuestas %}
+        <label>
+            <input type="radio" name="pregunta{{ i }}" value="{{ opcion }}" required />
+            {{ opcion }}
+        </label>
+        {% endfor %}
+    </div>
+{% endfor %}
+
+<!-- AQUÍ VA EL BOTÓN CORRECTO -->
+    <a href="/" class="boton-volver">Volver al menú</a>
+
+        <button type="submit">Enviar respuestas</button>
+    </form>
+</body>
+</html>
+
+  

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+    <style>
+    body{
+
+    font-family: 'Poppins', Arial-serif;
+    background: linear-gradient(135deg, #297785, #3698be, #3299c5);
+    color: #e0e0e0;
+    text-align: center;
+
+    }
+    
+    
+
+    h2 {
+        font-size: 50px;
+     background: linear-gradient(135deg, #2588b3, #27ddce, #2c5364);
+    color: #e0e0e0;
+    text-align: center;
+    }
+
+    form {
+        background-color: rgb(39, 224, 116);
+        display: inline-block;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    input {
+        width: 250px;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #54ca25;
+        color: rgb(0, 0, 0);
+        border: none;
+        border-radius: 6px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #79b45e;
+    }
+
+    a {
+        display: inline-block;
+        margin-top: 15px;
+        color: #000000;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    p {
+        margin-top: 15px;
+    }
+</style>
+
+    
+</head>
+<body>
+    <h2>Iniciar sesión</h2>
+
+    {% if mensaje %}
+        <p style="color:red;">{{ mensaje }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <input type="text" name="usuario" placeholder="Usuario" required><br><br>
+        <input type="password" name="password" placeholder="Contraseña" required><br><br>
+        <button type="submit">Entrar</button>
+    </form>
+     <a href="/" class="boton-volver">Volver al menú</a>
+
+    <p>¿No tienes cuenta? <a href="{{ url_for('registro') }}">Regístrate</a></p>
+</body>
+</html>
