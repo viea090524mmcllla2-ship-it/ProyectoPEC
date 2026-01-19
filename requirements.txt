@@ -1,8 +1,4 @@
-flask 
-flask_sqlalchemy
-gunicorn
-Flask 
-
+ Flask
+Flask-SQLAlchemy
+Flask-Login
 Werkzeug
-
-flask_login

@@ -191,6 +191,4 @@ def logout():
 with app.app_context():
     db.create_all()
 
-# EJECUTAR APP
-if __name__ == "__main__":
-    app.run()
+
